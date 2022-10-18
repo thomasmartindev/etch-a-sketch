@@ -20,22 +20,22 @@ header {
 h1 {
   color: rgb(30, 30, 30);
   font-family: Courgette;
-  font-size: 60px; 
+  font-size: 60px;
 }
 
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 60px;
   padding: 0 20px;
-  row-gap: 100px;
+  row-gap: 80px;
 }
 
 .pad {
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.2);
-  height: 600px;
+  height: 500px;
   width: 1000px;
 }
 
@@ -68,8 +68,44 @@ button:hover {
 }
 
 button:hover,
-.color:hover {
+.color:hover,
+.pad:hover {
   cursor: pointer;
+}
+
+.slider {
+  appearance: none;
+  background: rgb(215, 215, 215);
+  border-radius: 10px;
+  height: 15px;
+  opacity: 0.7;
+  outline: none;
+  transition: opacity .2s;
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+}
+
+.slider:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  background: rgb(60, 60, 60);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  -webkit-appearance: none;
+  width: 25px;
+}
+
+.slider::-moz-range-thumb {
+  background: rgb(60, 60, 60);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
 }
 
 .dimensions {
