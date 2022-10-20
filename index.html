@@ -16,13 +16,13 @@
       <h1>Etch-a-Sketch</h1>
     </header>
     <main>
-      <div class="pad"></div>
+      <div class="pad" id="pad"></div>
       <div class="menu">
         <input class="color-picker" id="colorPicker" type="color" value="#3c3c3c">
-        <button class="color-mode">Color mode</button>
-        <button class="rainbow-mode">Rainbow mode</button>
-        <button class="eraser">Eraser</button>
-        <button class="clear">Clear</button>
+        <button id="colorMode">Color mode</button>
+        <button id="rainbowMode">Rainbow mode</button>
+        <button id="eraser">Eraser</button>
+        <button id="clear">Clear</button>
         <input type="range" min="1" max="64" value="16" class="slider" id="slider">
         <p id="dimensions" class="dimensions">16 x 16</p>
       </div>

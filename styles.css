@@ -35,8 +35,14 @@ main {
 .pad {
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
   height: 500px;
-  width: 1000px;
+  width: 500px;
+}
+
+.pad > div {
+  border: 1px solid red;
 }
 
 .menu {
@@ -77,6 +83,15 @@ button:hover,
 .color-picker,
 .pad:hover {
   cursor: pointer;
+}
+
+.selected {
+  background-color: rgb(60, 60, 60);
+  color: rgb(245, 245, 245)
+}
+
+.selected:hover {
+  background-color: rgb(60, 60, 60);
 }
 
 .slider {
