@@ -6,6 +6,10 @@ const eraser = document.getElementById("eraser");
 const clear = document.getElementById("clear");
 const slider = document.getElementById("slider");
 const dimensions = document.getElementById("dimensions");
+let n = slider.value;
+
+window.addEventListener("load", activateColorMode);
+window.addEventListener("load", updatePad);
 
 colorMode.addEventListener("click", activateColorMode);
 rainbowMode.addEventListener("click", activateRainbowMode);
@@ -14,14 +18,14 @@ eraser.addEventListener("click", activateEraser);
 clear.addEventListener("click", clearPad);
 
 slider.addEventListener("click", function(e) {
-  updateDimensions(e.target.value);
+  if (n != e.target.value) {
+    clearPad();
+  }
 });
 
 slider.addEventListener("mousemove", function(e) {
   updateDimensions(e.target.value);
 });
-
-activateColorMode();
 
 function activateColorMode() {
   colorMode.classList.add("selected");
@@ -47,16 +51,16 @@ function clearPad() {
   for (let i = 0; i < divs.length; i++) {
     pad.removeChild(divs[i]);
   }
+
+  updatePad();
 }
 
 function updateDimensions(value) {
   dimensions.textContent = `${value} x ${value}`;
 }
 
-updatePad();
-
 function updatePad() {
-  clearPad();
+  n = slider.value;
 
   for (let i = 0; i < slider.value * slider.value; i++) {
     const div = document.createElement("div");
@@ -67,7 +71,7 @@ function updatePad() {
   const divs = document.querySelectorAll(".pad > div");
 
   divs.forEach((div) => {
-    div.addEventListener("click", () => {
+    div.addEventListener("mouseover", () => {
       if (colorMode.getAttribute("class") === "selected") {
         div.style.backgroundColor = `${colorPicker.value}`;
       }
