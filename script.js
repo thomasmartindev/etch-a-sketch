@@ -1,16 +1,11 @@
 const pad = document.getElementById("pad");
+const colorPicker = document.getElementById("colorPicker");
 const colorMode = document.getElementById("colorMode");
 const rainbowMode = document.getElementById("rainbowMode");
 const eraser = document.getElementById("eraser");
 const clear = document.getElementById("clear");
 const slider = document.getElementById("slider");
 const dimensions = document.getElementById("dimensions");
-
-for (let i = 0; i < slider.value * slider.value; i++) {
-  const div = document.createElement("div");
-  div.style.cssText = `height: ${500 / slider.value}px; width: ${500 / slider.value}px;`;
-  pad.appendChild(div);
-}
 
 colorMode.addEventListener("click", activateColorMode);
 rainbowMode.addEventListener("click", activateRainbowMode);
@@ -56,4 +51,35 @@ function clearPad() {
 
 function updateDimensions(value) {
   dimensions.textContent = `${value} x ${value}`;
+}
+
+updatePad();
+
+function updatePad() {
+  clearPad();
+
+  for (let i = 0; i < slider.value * slider.value; i++) {
+    const div = document.createElement("div");
+    div.style.cssText = `height: ${500 / slider.value}px; width: ${500 / slider.value}px;`;
+    pad.appendChild(div);
+  }
+
+  const divs = document.querySelectorAll(".pad > div");
+
+  divs.forEach((div) => {
+    div.addEventListener("click", () => {
+      if (colorMode.getAttribute("class") === "selected") {
+        div.style.backgroundColor = `${colorPicker.value}`;
+      }
+      else if (rainbowMode.getAttribute("class") === "selected") {
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
+        div.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+      }
+      else {
+        div.style.backgroundColor = "white";
+      }
+    });
+  });
 }

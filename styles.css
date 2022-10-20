@@ -18,7 +18,7 @@ header {
 }
 
 h1 {
-  color: rgb(30, 30, 30);
+  color: rgb(60, 60, 60);
   font-family: Courgette;
   font-size: 60px;
 }
@@ -63,6 +63,16 @@ main {
   outline: none;
   -webkit-appearance: none;
   width: 75px;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.color-picker:hover {
+  transform: scale(1.05);
 }
 
 button {
@@ -130,7 +140,7 @@ button:hover,
 }
 
 .dimensions {
-  color: rgb(30, 30, 30);
+  color: rgb(60, 60, 60);
   font-size: 20px;
   width: 65px;
 }
@@ -138,7 +148,7 @@ button:hover,
 footer {
   align-items: center;
   bottom: 0;
-  color: rgb(30, 30, 30);
+  color: rgb(60, 60, 60);
   column-gap: 10px;
   display: flex;
   font-size: 20px;
@@ -149,7 +159,7 @@ footer {
 }
 
 .fa-github {
-  color: rgb(30, 30, 30);
+  color: rgb(60, 60, 60);
   font-size: 24px;
   transition: transform 0.3s ease-in-out;
 }
