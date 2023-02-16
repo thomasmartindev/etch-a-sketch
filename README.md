@@ -1,5 +1,5 @@
 # Etch-a-Sketch
 
-Etch-a-sketch game created with HTML, CSS and JS.
+Etch-a-sketch game created with HTML, CSS and JavaScript.
 
-[Live Demo](https://thomasmdevelopment.github.io/etch-a-sketch/)
+[Live Preview](https://thomasmdevelopment.github.io/etch-a-sketch/)
